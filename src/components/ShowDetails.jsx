@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import Loader from "./Loader";
-import "./Details.css";
+import "../App.css";
 
 const ShowDetails = () => {
   const { id } = useParams();

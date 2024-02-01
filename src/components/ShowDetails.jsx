@@ -42,23 +42,21 @@ const ShowDetails = () => {
           <div className="content">
             <h2>{show?.name}</h2>
 
-            <div className="flex flex-row gap-4 mb-[-1rem]">
-              <span className="text-2xl mute font-semibold">
+            <div className="flex flex-col sm:flex-row  mb-[-1rem]">
+              <span className="text-2xl font-semibold">
                 Language: {show.language}
               </span>
-              <span className="text-2xl mute font-semibold">
-                Type: {show.type}
-              </span>
-              <span className="text-2xl mute font-semibold">
+              <span className="text-2xl font-semibold">Type: {show.type}</span>
+              <span className="text-2xl font-semibold">
                 Duration: {show.schedule.time}
               </span>
-              <span className="text-2xl mute font-semibold">
+              <span className="text-2xl font-semibold">
                 Days: {show.schedule.days}
               </span>
-              <span className="text-2xl mute font-semibold">
+              <span className="text-2xl font-semibold">
                 Status: {show.status}
               </span>
-              <span className="text-2xl mute font-semibold">
+              <span className="text-2xl font-semibold">
                 Rating: {show.rating.average}
               </span>
             </div>

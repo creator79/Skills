@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ShowList from './components/ShowList';
-import ShowDetails from './components/ShowDetails';
-import BookingForm from './components/BookingForm';
 import './App.css';
+
+// Lazy load components
+const ShowList = lazy(() => import('./components/ShowList'));
+const ShowDetails = lazy(() => import('./components/ShowDetails'));
+const BookingForm = lazy(() => import('./components/BookingForm'));
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Routes>
-        <Route path="/" element={<ShowList />}></Route>
-        <Route path="/shows/:id" element={<ShowDetails />}></Route>
-        <Route path="/shows/:id/book" element={<BookingForm />}></Route>
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<ShowList />} />
+            <Route path="/shows/:id" element={<ShowDetails />} />
+            <Route path="/shows/:id/book" element={<BookingForm />} />
+          </Routes>
+        </Suspense>
       </div>
     </Router>
   );

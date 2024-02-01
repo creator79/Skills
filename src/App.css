@@ -33,7 +33,7 @@
   padding: 25px;
   background: #000000;
   color: #fff;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
 }
 
 .detail .content h2 {
